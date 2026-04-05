@@ -1,0 +1,245 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+}
+
+/* -------------------------------------- */
+/* FIXED BACKGROUND LOGO (NO BLUR ISSUES) */
+/* -------------------------------------- */
+
+.page-with-logo {
+    position: relative;
+    background-color: #f7f9fc;
+}
+
+.page-with-logo:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* -------------------------------------- */
+/* HORIZONTAL NAVIGATION BAR (FULL WIDTH) */
+/* -------------------------------------- */
+
+.nav-horizontal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    padding: 12px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.nav-logo {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* NAV LINKS */
+.nav-horizontal ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAV LINKS STYLE */
+.nav-horizontal ul li a,
+.dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 0.3s;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* HOVER */
+.nav-horizontal ul li a:hover,
+.dropbtn:hover {
+    background-color: #0055aa;
+}
+
+/* ACTIVE PAGE */
+.nav-horizontal ul li a.active {
+    background-color: #0077ff;
+    font-weight: 700;
+    border-bottom: 3px solid #ffffff;
+}
+
+/* -------------------------------------- */
+/* CONTENT SPACING */
+/* -------------------------------------- */
+
+.content {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* -------------------------------------- */
+/* DROPDOWN MENU (CLICK-BASED, NOT HOVER) */
+/* -------------------------------------- */
+
+.dropdown {
+    position: relative;
+}
+
+/* Remove hover behavior — JS controls it */
+.dropdown:hover .dropdown-content {
+    display: none !important;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 10;
+
+    /* Smooth animation */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* JS toggles this */
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form styling */
+#profileForm label {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: block;
+}
+
+#profileForm input,
+#profileForm textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 8px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #005fcc;
+}
+
+/* -------------------------------------- */
+/* SOS DEMO */
+/* -------------------------------------- */
+
+.sos-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.sos-btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ff3b3b;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sos-btn:active {
+    transform: scale(0.95);
+}
+
+.countdown {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #ff3b3b;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* -------------------------------------- */
+/* MODAL */
+/* -------------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: none; /* default hidden */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+}
+
+.close-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

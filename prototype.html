@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe App – Prototype</title>
+    <link rel="stylesheet" href="safe.css">
+	<script src="safe.js" defer></script>
+</head>
+
+<body class="page-with-logo">
+
+<header>
+    <nav class="nav-horizontal">
+        <div class="nav-logo">SAFE</div>
+
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="prototype.html" class="active">Prototype</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+            <li><a href="userGuide.html">User Guide</a></li>
+            <li><a href="about.html">About You</a></li>
+
+            <!-- NEW DROPDOWN MENU -->
+            <li class="dropdown">
+                <button class="dropbtn">Create Profile ▼</button>
+                <div class="dropdown-content">
+                    <form id="profileForm">
+                        <label>Name</label>
+                        <input type="text" name="name" required>
+
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+
+                        <label>Medical Info</label>
+                        <textarea name="medical" rows="3" required></textarea>
+
+                        <label>Allergies</label>
+                        <input type="text" name="allergies">
+
+                        <label>Emergency Contact</label>
+                        <input type="text" name="emergency">
+
+                        <button type="submit" class="submit-btn">Save Profile</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content">
+
+    <section>
+        <h1>Safe App Prototype</h1>
+        <p>The Safe prototype demonstrates the core layout, navigation flow, and essential safety features of the application. It provides a visual and functional preview of how families will interact with the platform during everyday use and emergency situations.</p>
+    </section>
+
+    <section>
+        <h2>Main Screens in the Prototype</h2>
+
+        <h3>Home Dashboard</h3>
+        <p>The dashboard provides quick access to the most important safety tools, including the SOS button, Family Map, Profiles, Travel Mode, Disaster Mode, and notifications.</p>
+
+        <h3>Family Map</h3>
+        <p>A real-time map showing active locations, last known locations, geofencing zones, and movement history. Users can tap a profile to view details or send a check-in request.</p>
+
+        <h3>User Profiles</h3>
+        <p>Each profile displays medical information, allergies, medications, emergency contacts, and a quick-share medical card. Profiles can be edited or updated at any time.</p>
+
+        <h3>SOS Emergency Screen</h3>
+        <p>The SOS interface includes long-press activation, a 3-second confirmation countdown, and automatic alert sending with real-time location and medical data.</p>
+
+        <h3>Child Safety Tools</h3>
+        <p>Includes school-zone alerts, trusted adult pickup authorization, restricted zones, and location history timelines.</p>
+
+        <h3>Travel Safety Mode</h3>
+        <p>Automatically adjusts to provide local emergency numbers, embassy contacts, high-risk area alerts, and travel document storage.</p>
+
+        <h3>Disaster Mode</h3>
+        <p>Provides offline maps, shelter locations, and family rally point coordination for use during network outages or natural disasters.</p>
+    </section>
+
+    <section>
+        <h2>Prototype Goals</h2>
+        <p>The Safe prototype is designed to demonstrate the app’s core features, show navigation flow, support testing, and ensure accessibility for all users.</p>
+    </section>
+    <section>
+    <h2>Interactive SOS Demo</h2>
+    <p>Press and hold the SOS button to simulate the emergency activation sequence.</p>
+
+    <div class="sos-container">
+        <button id="sosButton" class="sos-btn">SOS</button>
+        <div id="countdown" class="countdown hidden">3</div>
+    </div>
+
+    <!-- Modal -->
+    <div id="sosModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Emergency Alert Sent</h3>
+            <p>Your location and medical profile have been shared with your emergency contacts.</p>
+            <button id="closeModal" class="close-btn">Close</button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<script>
+    // Simple form handler for demo
+    document.getElementById("profileForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Profile saved! (Demo only)");
+    });
+</script>
+
+</body>
+</html>
