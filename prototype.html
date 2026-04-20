@@ -12,8 +12,7 @@
 
 <header>
     <nav class="nav-horizontal">
-        <div class="nav-logo">SAFE</div>
-
+        <div class="nav-logo" id="safeLogo">SAFE</div>
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="prototype.html" class="active">Prototype</a></li>
@@ -42,6 +41,7 @@
                         <input type="text" name="emergency">
 
                         <button type="submit" class="submit-btn">Save Profile</button>
+						<button type="button" class="submit-btn" onclick="closeProfileMenu()">Back</button>
                     </form>
                 </div>
             </li>
@@ -103,16 +103,43 @@
         </div>
     </div>
 </section>
+<!-- NEW INTERACTIVE PROTOTYPE SECTION -->
+<section>
+    <h2>SAFE Interactive Prototype</h2>
+    <p>Select a feature to preview how it works inside the app.</p>
+
+    <div class="prototype-container">
+
+        <!-- LEFT SIDE FEATURE LIST -->
+        <div class="feature-list">
+            <button class="feature-btn" onclick="openFeature('home')">🏠 Home Screen</button>
+            <button class="feature-btn" onclick="openFeature('profile')">👤 User Profile</button>
+            <button class="feature-btn" onclick="openFeature('alerts')">🚨 Emergency Alerts</button>
+            <button class="feature-btn" onclick="openFeature('child')">🧒 Child Safety</button>
+            <button class="feature-btn" onclick="openFeature('disaster')">🌪 Disaster Mode</button>
+            <button class="feature-btn" onclick="openFeature('locate')">📍 Locate Family Member</button>
+            <button class="feature-btn" onclick="openFeature('travel')">✈️ Travel Safety</button>
+        </div>
+
+        <!-- RIGHT SIDE PHONE MOCKUP -->
+        <div class="phone-frame">
+            <div class="phone-screen" id="phoneScreen">
+                <p>Select a feature to preview it here.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
 </main>
-
-<script>
-    // Simple form handler for demo
-    document.getElementById("profileForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        alert("Profile saved! (Demo only)");
-    });
-</script>
-
+<footer class="safe-footer">
+    <p>SAFE © 2026</p>
+    <div class="footer-links">
+        <a href="about.html">Mission</a>
+        <a href="userGuide.html">Privacy</a>
+        <a href="marketing.html">Contact</a>
+    </div>
+</footer>
 </body>
 </html>
