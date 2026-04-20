@@ -573,3 +573,43 @@ body.dark-mode .sos-btn {
     text-decoration: underline;
 }
 
+/* -------------------------------------- */
+/* MODERN FADE ANIMATIONS (Required for JS) */
+/* -------------------------------------- */
+
+.fade-in {
+    animation: fadeIn 0.45s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth hover animations for icons & buttons */
+.app-icon {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.app-icon:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+.save-btn,
+.sos-red-btn,
+.close-btn {
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.save-btn:hover,
+.sos-red-btn:hover,
+.close-btn:hover {
+    transform: scale(1.05);
+}
